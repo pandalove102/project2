@@ -18,6 +18,7 @@ var app = app || {};
         constructor: function () {
             let self = this;
             kb.ViewModel.prototype.constructor.call(this);
+
             self.credentials = new app.credentialsView(new app.credentialsModel());
         },
 
