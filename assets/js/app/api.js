@@ -6,8 +6,8 @@ var API = API || {};
 |--------------------------------------------------------------------------
 | @author: Tri Huynh
 | @created: 11/09/2018
-| @edited_by:
-| @updated:
+| @edited_by: PhuongTT
+| @updated: PhuongTT
 */
 
 (function () {
@@ -20,7 +20,25 @@ var API = API || {};
         USER: {
             GET_PROFILE: 'user/ajaxGetProfile',
             REGISTER: 'user/register'
-        }
+        },
+        /*
+        |--------------------------------------------------------------------------
+        |  API USING FOR (TOUR/SHOP/HOTEL/SERVICE)
+        |--------------------------------------------------------------------------
+        | @author: PhuongTT
+        */
+        HOTEL: {
+            
+        },
+        TOUR: {
+
+        },
+        SHOP: {
+
+        },
+        SERVICE: {
+
+        },
     };
 
 })();

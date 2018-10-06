@@ -70,7 +70,7 @@ class MY_Model extends CI_Model
         $this->access_token = isset($user_info['access_token']) ? $user_info['access_token'] : NULL;
     }
 
-    private function addAccessToken(&$params)
+    private function add_access_token(&$params)
     {
         $params['access_token'] = $this->access_token;
     }
@@ -108,9 +108,9 @@ class MY_Model extends CI_Model
     |--------------------------------------------------------------------------
     | http://docs.guzzlephp.org/en/stable/quickstart.html
     */
-    public function getAPI($path, $route, array $params)
+    public function get_api($path, $route, array $params)
     {
-        $this->addAccessToken($params);
+        $this->add_access_token($params);
         $url = $path . $route;
         $result = NULL;
         $error = NULL;
@@ -131,9 +131,9 @@ class MY_Model extends CI_Model
         return $result;
     }
 
-    public function postAPI($path, $route, array $params)
+    public function post_api($path, $route, array $params)
     {
-        $this->addAccessToken($params);
+        $this->add_access_token($params);
         $url = $path . $route;
         $result = NULL;
         $error = NULL;

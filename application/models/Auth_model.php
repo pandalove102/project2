@@ -8,7 +8,7 @@
  */
 
 class Auth_model extends MY_Model {
-    public function checkUserCredentials($params){
+    public function check_user_credentials($params){
         return $this->authenticate(API_PATH_OAUTH, '/oauth/token?grant_type=client_credentials', $params);
     }
 }

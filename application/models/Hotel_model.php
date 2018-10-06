@@ -28,8 +28,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function create_hotel_group_facilities ($params) {        
-      $data = $this->query_api(METHOD_POST, CREATE_HOTEL_GROUP_FACILITIES, $this->config->item('API_PATH_HOTEL_SERVICE'), $params, 'json');
-      return $data;
+        return $this->post_api(API_PATH_HOTEL_SERVICE, '/hotelAdmin/createGroupFacilities', $params);
     }
     /**
      * [get_hotel_group_facilities]
@@ -40,8 +39,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function get_hotel_group_facilities ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_HOTEL_GROUP_FACILITIES, $this->config->item('API_PATH_HOTEL_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_HOTEL_SERVICE, '/hotelAdmin/groupFacilities', $params);
     }
     /**
      * [create_hotel_group_service]
@@ -52,8 +50,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function create_hotel_group_service ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_HOTEL_GROUP_SERVICE, $this->config->item('API_PATH_HOTEL_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_HOTEL_SERVICE, '/hotelAdmin/createGroupService', $params);
     }
     /**
      * [get_hotel_group_service]
@@ -64,8 +61,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function get_hotel_group_service ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_HOTEL_GROUP_SERVICE, $this->config->item('API_PATH_HOTEL_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_HOTEL_SERVICE, '/hotelAdmin/groupService', $params);
     }
     /**
      * [remove_hotel_group_facilities_or_service]
@@ -76,8 +72,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function remove_hotel_group_facilities_or_service ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_HOTEL_GROUP_FACILITIES_OR_SERVICE, $this->config->item('API_PATH_HOTEL_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_HOTEL_SERVICE, '/hotelAdmin/remove', $params);
     }
     /**
      * [create_hotel_facilities]
@@ -88,8 +83,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function create_hotel_facilities ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_HOTEL_FACILITIES, $this->config->item('API_PATH_HOTEL_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_HOTEL_SERVICE, '/haloFacilities/create', $params);
     }
     /**
      * [get_hotel_facilities]
@@ -100,8 +94,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function get_hotel_facilities ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_HOTEL_FACILITIES, $this->config->item('API_PATH_HOTEL_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_HOTEL_SERVICE, '/haloFacilities/facilities', $params);
     }
     /**
      * [get_hotel_list_service]
@@ -112,8 +105,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function get_hotel_list_service ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_HOTEL_LIST_SERVICE, $this->config->item('API_PATH_HOTEL_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_HOTEL_SERVICE, '/haloFacilities/services', $params);
     }
     /**
      * [remove_hotel_facilities_or_service]
@@ -124,8 +116,7 @@ class Hotel_model extends MY_Model {
      * @return $data
      */
     public function remove_hotel_facilities_or_service ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_HOTEL_FACILITIES_OR_SERVICE, $this->config->item('API_PATH_HOTEL_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_HOTEL_SERVICE, '/haloFacilities/remove', $params);
     }
 
 }

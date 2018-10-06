@@ -28,8 +28,7 @@ class Shop_model extends MY_Model {
      * @return $data
      */
     public function create_shop_categories ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_SHOP_CATEGORIES, $this->config->item('API_PATH_SHOP_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_SHOP_SERVICE, '/categories/create', $params);
     }
     /**
      * [get_shop_list_categories_default]
@@ -40,8 +39,7 @@ class Shop_model extends MY_Model {
      * @return $data
      */
     public function get_shop_list_categories_default ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_SHOP_LIST_CATEGORIES_DEFAULT, $this->config->item('API_PATH_SHOP_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_SHOP_SERVICE, '/categories/categories', $params);
     }
     /**
      * [get_shop_list_categories_by_id]
@@ -52,8 +50,7 @@ class Shop_model extends MY_Model {
      * @return $data
      */
     public function get_shop_list_categories_by_id ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_SHOP_LIST_CATEGORIES_BY_ID, $this->config->item('API_PATH_SHOP_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_SHOP_SERVICE, '/categories/findById', $params);
     }
     /**
      * [remove_shop_categories]
@@ -64,8 +61,7 @@ class Shop_model extends MY_Model {
      * @return $data
      */
     public function remove_shop_categories ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_SHOP_CATEGORIES, $this->config->item('API_PATH_SHOP_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_SHOP_SERVICE, '/categories/remove', $params);
     }
     /**
      * [remove_shop_all_categories]
@@ -76,7 +72,6 @@ class Shop_model extends MY_Model {
      * @return $data
      */
     public function remove_shop_all_categories ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_SHOP_ALL_CATEGORIES, $this->config->item('API_PATH_SHOP_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_SHOP_SERVICE, '/categories/removeAll', $params);
     }
 }

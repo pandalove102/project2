@@ -47,7 +47,7 @@ class Login extends MY_Controller
 
                     $params['password'] = MD5($params['password']);
 
-                    if ($query = $this->Auth_model->checkUserCredentials($params)):
+                    if ($query = $this->Auth_model->check_user_credentials($params)):
                         $this->session->sess_expiration = $query['expires_in'];
                         $this->session->set_userdata(USER_INFO_SESSION_NAME, $query);
                         $this->render_json($query);

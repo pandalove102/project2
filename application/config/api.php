@@ -39,7 +39,7 @@ define('API_PATH_SHOP_SERVICE', 'api-rest-shop/service');
 */
 
 //HOTEL
-define('CREATE_HOTEL_GROUP_FACILITIES', 'hotelAdmin/createGroupFacilities');
+/* define('CREATE_HOTEL_GROUP_FACILITIES', 'hotelAdmin/createGroupFacilities');
 define('GET_HOTEL_GROUP_FACILITIES', 'hotelAdmin/groupFacilities');
 define('CREATE_HOTEL_GROUP_SERVICE', 'hotelAdmin/createGroupService');
 define('GET_HOTEL_GROUP_SERVICE', 'hotelAdmin/groupService');
@@ -74,4 +74,4 @@ define('REMOVE_TOUR_TOPIC', 'topic_system/remove');
 define('GET_TIMEZONE', 'currency/timezone');
 define('CREATE_TIMEZONE_FROM_EXTERNAL', 'currency/createTimezone');
 define('UPDATE_TIMEZONE', 'currency/updateTimezone');
-define('REMOVE_TIMEZONE', 'currency/removeTimeZone');
+define('REMOVE_TIMEZONE', 'currency/removeTimeZone'); */

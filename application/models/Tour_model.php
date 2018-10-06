@@ -19,7 +19,7 @@ class Tour_model extends MY_Model {
 		parent::__construct();
     }
     
-    /**
+     /**
      * [create_tour_topic]
      *
      * @author PhuongTT
@@ -28,8 +28,7 @@ class Tour_model extends MY_Model {
      * @return $data
      */
     public function create_tour_topic ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_TOUR_TOPIC, $this->config->item('API_PATH_TOUR_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_TOUR_SERVICE, '/topic_system/create', $params);
     }
     /**
      * [get_tour_list_topic]
@@ -40,8 +39,7 @@ class Tour_model extends MY_Model {
      * @return $data
      */
     public function get_tour_list_topic ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_TOUR_LIST_TOPIC, $this->config->item('API_PATH_TOUR_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_TOUR_SERVICE, '/topic_system/showTopic', $params);
     }
     /**
      * [remove_tour_topic]
@@ -52,8 +50,6 @@ class Tour_model extends MY_Model {
      * @return $data
      */
     public function remove_tour_topic ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_TOUR_TOPIC, $this->config->item('API_PATH_TOUR_SERVICE'), $params, 'json');
-        return $data;
+        return $this->post_api(API_PATH_TOUR_SERVICE, '/topic_system/remove', $params);
     }
-
 }

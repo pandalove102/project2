@@ -11,7 +11,7 @@
 class User_model extends MY_Model {
 
     public function testGet($params){
-        return $this->getAPI('/users/defunkt', $params);
+        return $this->get_api('/users/defunkt', $params);
     }
 
     public function testPost(){

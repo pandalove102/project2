@@ -28,8 +28,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function get_currency ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_CURRENCY, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_SERVICE_SERVICE, '/currency/currency', $params);
     }
     /**
      * [create_list_currency]
@@ -40,8 +39,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function create_list_currency ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_LIST_CURRENCY, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/createCurrency', $params);
     }
     /**
      * [update_currency]
@@ -52,8 +50,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function update_currency ($params) {        
-        $data = $this->query_api(METHOD_POST, UPDATE_CURRENCY, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/updateCurrency', $params);
     }
     /**
      * [find_currency_by_code]
@@ -64,8 +61,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function find_currency_by_code ($params) {        
-        $data = $this->query_api(METHOD_GET, FIND_CURRENCY_BY_CODE, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_SERVICE_SERVICE, '/currency/findByCode', $params);
     }
     /**
      * [remove_currency]
@@ -76,8 +72,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function remove_currency ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_CURRENCY, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/remove', $params);
     }
     /**
      * [update_currency_by_date]
@@ -88,8 +83,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function update_currency_by_date ($params) {        
-        $data = $this->query_api(METHOD_POST, UPDATE_CURRENCY_BY_DATE, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/updateCurrencyByDate', $params);
     }
     /**
      * [get_timezone]
@@ -100,8 +94,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function get_timezone ($params) {        
-        $data = $this->query_api(METHOD_GET, GET_TIMEZONE, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->get_api(API_PATH_SERVICE_SERVICE, '/currency/timezone', $params);
     }
     /**
      * [create_timezone_from_external]
@@ -112,8 +105,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function create_timezone_from_external ($params) {        
-        $data = $this->query_api(METHOD_POST, CREATE_TIMEZONE_FROM_EXTERNAL, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/createTimezone', $params);
     }
     /**
      * [update_timezone]
@@ -124,8 +116,7 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function update_timezone ($params) {        
-        $data = $this->query_api(METHOD_POST, UPDATE_TIMEZONE, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/updateTimezone', $params);
     }
     /**
      * [remove_timezone]
@@ -136,7 +127,6 @@ class Service_model extends MY_Model {
      * @return $data
      */
     public function remove_timezone ($params) {        
-        $data = $this->query_api(METHOD_POST, REMOVE_TIMEZONE, $this->config->item('API_PATH_SERVICE_SERVICE'), $params);
-        return $data;
+        return $this->post_api(API_PATH_SERVICE_SERVICE, '/currency/removeTimeZone', $params);
     }
 }
