@@ -1,10 +1,11 @@
+
 /*global Knockback */
 var app = app || {};
 
 (function () {
     'use strict';
 
-    window.loginController = kb.ViewModel.extend({
+    window.LoginController = kb.ViewModel.extend({
         /*
         |--------------------------------------------------------------------------
         | CONSTRUCTOR
@@ -19,7 +20,7 @@ var app = app || {};
             let self = this;
             kb.ViewModel.prototype.constructor.call(this);
 
-            self.credentials = new app.credentialsView(new app.credentialsModel());
+            self.credentials = new app.CredentialsView(new app.CredentialsModel());
         },
 
     });

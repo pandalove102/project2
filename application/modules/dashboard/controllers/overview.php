@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Overview extends MY_Controller
+class Overview extends Authenticated_Controller
 {
 
 	protected $model_file = 'User_model';

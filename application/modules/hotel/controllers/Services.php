@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Services extends MY_Controller
+class Services extends Authenticated_Controller
 {
 
 	protected $model_file = 'Hotel_model';
@@ -58,18 +58,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->create_hotel_group_service($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_get_hotel_group_service]
@@ -81,18 +76,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->get_hotel_group_service($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_get_hotel_list_service]
@@ -104,18 +94,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->get_hotel_list_service($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_create_hotel_service]
@@ -127,18 +112,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->create_hotel_facilities($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_hotel_facilities_or_service]
@@ -150,18 +130,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->remove_hotel_facilities_or_service($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_hotel_group_facilities_or_service]
@@ -173,18 +148,13 @@ class Services extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Hotel_model');
 
         // Update data
         $query = $this->Hotel_model->remove_hotel_group_facilities_or_service($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
 
 }

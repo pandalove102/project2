@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Currencies extends MY_Controller
+class Currencies extends Authenticated_Controller
 {
 
 	protected $model_file = 'Hotel_model';
@@ -64,18 +64,13 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->get_currency($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_create_list_currency]
@@ -87,18 +82,13 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->create_list_currency($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_update_currency]
@@ -110,18 +100,13 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->update_currency($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_find_currency_by_code]
@@ -133,18 +118,13 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->find_currency_by_code($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_currency]
@@ -156,18 +136,13 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->remove_currency($param);
 
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_update_currency_by_date]
@@ -179,17 +154,12 @@ class Currencies extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->update_currency_by_date($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
 }

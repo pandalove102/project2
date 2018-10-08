@@ -20,9 +20,9 @@ class Login extends MY_Controller
             }
         }
 
-        $this->add_script('js/modules/auth/models/credentialsModel.js');
-        $this->add_script('js/modules/auth/views/credentialsView.js');
-        $this->add_script('js/modules/auth/loginController.js');
+        $this->add_script('js/modules/auth/models/CredentialsModel.js');
+        $this->add_script('js/modules/auth/views/CredentialsView.js');
+        $this->add_script('js/modules/auth/LoginController.js');
 
         /* Page login */
         $this->layout('blank')->view('auth/login')->render();

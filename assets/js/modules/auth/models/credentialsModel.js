@@ -4,7 +4,7 @@ var app = app || {};
 (function () {
     'use strict';
 
-    app.credentialsModel = Backbone.Model.extend({
+    app.CredentialsModel = Backbone.Model.extend({
         /* --- Prevent backbone sync --- */
         sync: function () {
             return false;
@@ -39,7 +39,7 @@ var app = app || {};
         },
 
 
-        /* --- URL --- */
+        /* --- CUSTOM METHOD --- */
         authenticate: function (callback) {
             let params = _.pick(this.toJSON(),['username','password']);
             return AJAX.post(API.AUTH.AUTHENTICATE, params);

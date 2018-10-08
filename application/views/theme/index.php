@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js h-100" lang="en">
+<html class="h-100" lang="en">
 <?php $this->load->view('theme/header'); ?>
 <body class="h-100">
 <div class="container-fluid">

@@ -1,5 +1,4 @@
 /* global _ */
-var Helper = Helper || {};
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +81,24 @@ var Helper = Helper || {};
             var obj = this.urlToObj(url || location.search, convert);
             if (obj[param] !== undefined) return obj[param];
             return false;
+        },
+
+        getData: function (input) {
+            // has data ?
+            if (input.data) {
+                // is elastic search response
+                if (typeof input.data.hits !== "undefined") {
+                    if (typeof input.data.hits.hits !== "undefined"){
+                        return _.map(input.data.hits.hits, '_source');
+                    } else{
+                        return null;
+                    }
+                }
+                // is api response
+                else {
+                    return input.data;
+                }
+            } else return null;
         }
 
         /* -------------------------------- END --------------------------------*/

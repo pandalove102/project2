@@ -10,11 +10,15 @@
 
 class User_model extends MY_Model {
 
-    public function testGet($params){
-        return $this->get_api('/users/defunkt', $params);
-    }
-
-    public function testPost(){
-
+    /**
+     * [search_user]
+     *
+     * @author PhuongTT
+     * @date 10/08/2018
+     * @param object $params
+     * @return $data
+     */
+    public function search_user($params){
+        return $this->get_api(API_ES_URL,'/users/search', $params);
     }
 }

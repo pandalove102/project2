@@ -33,7 +33,12 @@ $config['sidebar_menu'] = array(
     array(
         'label' => 'Resources',
         'url' => 'resources',
-        'children' => array(
+        'children' => array(            
+            array(
+                'label' => 'User',
+                'url' => 'user',
+                'icon' => ''
+			),
             array(
                 'label' => 'Hotel',
                 'url' => 'hotel',
@@ -58,7 +63,7 @@ $config['sidebar_menu'] = array(
                 'children' => array(
                     array('label' => 'Categories', 'url' => 'shop/categories'),
                 )
-			),
+            ),
 			array(
                 'label' => 'Service',
                 'url' => 'service',

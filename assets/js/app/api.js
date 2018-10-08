@@ -14,19 +14,20 @@ var API = API || {};
     "use strict";
 
     window.API = {
+        /*
+        |--------------------------------------------------------------------------
+        |  API USING FOR (LOGIN/USERS/TOUR/SHOP/HOTEL/SERVICE)
+        |--------------------------------------------------------------------------
+        | @author: PhuongTT
+        */
         AUTH: {
           AUTHENTICATE: 'auth/login/ajax_authorize'
         },
         USER: {
-            GET_PROFILE: 'user/ajaxGetProfile',
-            REGISTER: 'user/register'
+            // GET_PROFILE: 'user/ajaxGetProfile',
+            // REGISTER: 'user/register',
+            SEARCH_USERS: 'user/ajax_search_user'
         },
-        /*
-        |--------------------------------------------------------------------------
-        |  API USING FOR (TOUR/SHOP/HOTEL/SERVICE)
-        |--------------------------------------------------------------------------
-        | @author: PhuongTT
-        */
         HOTEL: {
             
         },

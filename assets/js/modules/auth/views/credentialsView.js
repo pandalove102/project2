@@ -8,7 +8,7 @@ var Helper = Helper || {};
     // const ENTER_KEY = 13;
     // const ESC_KEY = 27;
 
-    app.credentialsView = kb.ViewModel.extend({
+    app.CredentialsView = kb.ViewModel.extend({
         /*
         |--------------------------------------------------------------------------
         | CONSTRUCTOR

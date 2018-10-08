@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class topics extends MY_Controller
+class topics extends Authenticated_Controller
 {
 
 	protected $model_file = 'Hotel_model';
@@ -57,18 +57,13 @@ class topics extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Tour_model');
 
         // Update data
         $query = $this->Tour_model->create_tour_topic($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_get_tour_list_topic]
@@ -80,18 +75,13 @@ class topics extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Tour_model');
 
         // Update data
         $query = $this->Tour_model->get_tour_list_topic($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_tour_topic]
@@ -103,18 +93,13 @@ class topics extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Tour_model');
 
         // Update data
         $query = $this->Tour_model->remove_tour_topic($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
 
 

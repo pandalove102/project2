@@ -1,4 +1,4 @@
-<div class="row no-gutters h-100"  kb-inject="loginController">
+<div class="row no-gutters h-100"  kb-inject="LoginController">
     <div class="col-lg-3 col-md-5 auth-form mx-auto my-auto">
         <div class="card">
             <div class="card-body" data-bind="with: credentials">
@@ -6,14 +6,15 @@
                 <h5 class="auth-form__title text-center mb-4">Access Your Account</h5>
                 <form data-bind="submit: onSubmit">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
-                               aria-describedby="emailHelp" placeholder="Enter email" data-bind="value: username"></div>
+                        <label for="input-username">Username</label>
+                        <input type="text" class="form-control" id="input-username"
+                               placeholder="Enter email or phone" data-bind="value: username"></div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
+                        <label for="input-password">Password</label>
+                        <input type="password" class="form-control" id="input-password"
                                placeholder="Password" data-bind="value: password"></div>
-                    <?php if (FALSE): ?>
+
+                    <?php if (FALSE): /* Hiện tại không dùng đến */ ?>
                         <div class="form-group mb-3 d-table mx-auto">
                             <div class="custom-control custom-checkbox mb-1">
                                 <input type="checkbox" class="custom-control-input" id="customCheck2">
@@ -22,6 +23,7 @@
                             </div>
                         </div>
                     <?php endif; ?>
+
                     <button type="submit" class="btn btn-pill btn-accent d-table mx-auto">Access
                         Account
                     </button>

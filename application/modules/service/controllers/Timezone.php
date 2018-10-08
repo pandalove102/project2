@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Timezone extends MY_Controller
+class Timezone extends Authenticated_Controller
 {
 
 	protected $model_file = 'Hotel_model';
@@ -64,18 +64,13 @@ class Timezone extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->get_timezone($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_create_timezone_from_external]
@@ -87,18 +82,13 @@ class Timezone extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->create_timezone_from_external($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_update_timezone]
@@ -110,18 +100,13 @@ class Timezone extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->update_timezone($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_timezone]
@@ -133,18 +118,13 @@ class Timezone extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Service_model');
 
         // Update data
         $query = $this->Service_model->remove_timezone($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
 
 }

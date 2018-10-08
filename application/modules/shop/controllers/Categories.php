@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Categories extends MY_Controller
+class Categories extends Authenticated_Controller
 {
 
 	protected $model_file = 'Hotel_model';
@@ -58,18 +58,13 @@ class Categories extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Shop_model');
 
         // Update data
         $query = $this->Shop_model->create_shop_categories($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_get_shop_list_categories_default]
@@ -81,18 +76,13 @@ class Categories extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Shop_model');
 
         // Update data
         $query = $this->Shop_model->get_shop_list_categories_default($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_get_shop_list_categories_by_id]
@@ -104,18 +94,13 @@ class Categories extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Shop_model');
 
         // Update data
         $query = $this->Shop_model->get_shop_list_categories_by_id($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_shop_categories]
@@ -127,18 +112,13 @@ class Categories extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Shop_model');
 
         // Update data
         $query = $this->Shop_model->remove_shop_categories($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
     /**
      * [ajax_remove_shop_all_categories]
@@ -150,18 +130,13 @@ class Categories extends MY_Controller
         //Setting parametter call action update from model PHP
         $requestBody = $this->input->post('requestBody');
         $param = json_encode($requestBody, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        $this->load->model('Shop_model');
 
         // Update data
         $query = $this->Shop_model->remove_shop_all_categories($param);
-
-        // Response status udpate 
-        if (check_query($query)) {
-            // Update success
-            echo json_encode($query->elements[0]);
-        } else {
-            // Update fail
-            echo json_encode(array('error' => 'true'));
-        }
+        
+        // export data
+        $this->render_json($query);
     }
 
 }
